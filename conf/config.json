@@ -1,5 +1,5 @@
 {
-    "baseurl": "__DOMAIN__",
+    "baseurl": "https://__DOMAIN__",
     "server": {
         "host": "localhost",
         "port": "__PORT__"
@@ -20,5 +20,5 @@
     },
     "user_locale": "__DATA_DIR__/user_locale",
     "upload_path": "__DATA_DIR__/uploads",
-    "plugins_path": "__DATA_DIR__/plugins",
+    "plugins_path": "__DATA_DIR__/plugins"
 }
