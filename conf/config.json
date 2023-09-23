@@ -1,6 +1,5 @@
 {
     "baseurl": "__DOMAIN__",
-    "hostname": "__DOMAIN__",
     "server": {
         "host": "localhost",
         "port": "__PORT__"
