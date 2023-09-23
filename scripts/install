@@ -1,0 +1,129 @@
+#!/bin/bash
+#### App file generated with YoloGen, the Yunohost app generator, version 0.6.
+# This is the tutorial version of the app.
+# It contains extra commands to explain what should be done in case you want to adjust some part of the script.
+# Once you are done, you may remove them.
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+source _common.sh
+source /usr/share/yunohost/helpers
+
+# Install parameters are automatically saved as settings
+#
+# Settings are automatically loaded as bash variables
+# in every app script context, therefore typically these will exist:
+# - $domain
+# - $path
+# - $language
+# ... etc
+#
+# Resources defined in the manifest are provisioned prior to this script
+# and corresponding settings are also available, such as:
+# - $install_dir
+# - $port
+# - $db_name
+# ...
+
+#
+# $app is the app id (i.e. 'example' for first install,
+# or 'example__2', '__3', ... for multi-instance installs)
+#
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Installing dependencies..." --weight=10
+
+# Install Nodejs
+ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+#=================================================
+# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Setting up source files..." --weight=1
+
+### `ynh_setup_source` is used to install an app from a zip or tar.gz file,
+### downloaded from an upstream source, like a git repository.
+### `ynh_setup_source` use the file conf/app.src
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source --dest_dir="$install_dir"
+
+# $install_dir will automatically be initialized with some decent
+# permission by default ... however, you may need to recursively reapply
+# ownership to all files such as after the ynh_setup_source step
+chown -R $app:www-data "$install_dir" 
+
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+# Create a dedicated NGINX config using the conf/nginx.conf template
+ynh_add_nginx_config
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+    yunohost service add $app --description="A federated shared agenda for local communities." --log="/var/log/$app/$app.log"
+
+    # Use logrotate to manage application logfile(s)
+ynh_use_logrotate
+
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+ynh_add_config --template="config.json" --destination="$install_dir/config.json"
+
+# FIXME: this should be handled by the core in the future
+# You may need to use chmod 600 instead of 400,
+# for example if the app is expected to be able to modify its own config
+chmod 400 "$install_dir/config.json"
+chown $app:$app "$install_dir/config.json"
+
+### For more complex cases where you want to replace stuff using regexes,
+### you shoud rely on ynh_replace_string (which is basically a wrapper for sed)
+### When doing so, you also need to manually call ynh_store_file_checksum
+###
+### ynh_replace_string --match_string="match_string" --replace_string="replace_string" --target_file="$install_dir/some_config_file"
+### ynh_store_file_checksum --file="$install_dir/some_config_file"
+
+#=================================================
+# INSTALL YARN
+#=================================================
+ynh_script_progression --message="Installing yarn dependency..." --weight=15
+
+pushd $install_dir
+	ynh_use_nodejs
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
+popd
+#=================================================
+# SETUP APPLICATION WITH CURL
+#=================================================
+
+#### TODO in Yunohost App Generator
+# Installation with curl
+ynh_script_progression --message="Finalizing installation..." --weight=1
+ynh_local_curl "/INSTALL_PATH" "key1=value1" "key2=value2" "key3=value3"
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+#=================================================
+# END OF SCRIPT
+#=================================================
+ynh_script_progression --message="Installation of $app completed" --last
