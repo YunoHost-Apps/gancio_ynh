@@ -102,7 +102,7 @@ ynh_script_progression --message="Installing yarn dependency and building the ap
 
 pushd $install_dir
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH run build --config $install_dir/config.json #There is no "install" command, only build
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ynh_npm run build --config $install_dir/config.json #There is no "install" command, only build
 popd
 #=================================================
 # SETUP APPLICATION WITH CURL
