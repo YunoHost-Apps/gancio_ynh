@@ -67,11 +67,10 @@ ynh_add_nginx_config
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-    yunohost service add $app --description="A federated shared agenda for local communities." --log="/var/log/$app/$app.log"
+yunohost service add $app --description="A federated shared agenda for local communities." --log="/var/log/$app/$app.log"
 
-    # Use logrotate to manage application logfile(s)
+# Use logrotate to manage application logfile(s)
 ynh_use_logrotate
-
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -103,7 +102,7 @@ ynh_script_progression --message="Installing yarn dependency and building the ap
 
 pushd $install_dir
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH run build --config $install_dir/config.json #There is no "install" command, only build
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH run build --config $install_dir/config.json #There is no "install" command, only build
 popd
 #=================================================
 # SETUP APPLICATION WITH CURL
