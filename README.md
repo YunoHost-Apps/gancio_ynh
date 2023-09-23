@@ -16,7 +16,10 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-A shared agenda for local communities, federated with the fediverse.
+This app provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
+
+*Note that this package is still work in progress, don't consider it as stable.*
+
 
 **Shipped version:** 1.6.10~ynh1
 
