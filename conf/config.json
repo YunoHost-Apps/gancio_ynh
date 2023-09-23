@@ -3,7 +3,7 @@
     "hostname": "__HOSTNAME__",
     "server": {
         "host": "localhost",
-        "port": __PORT__
+        "port": "__PORT__"
         },
     "log_level": "debug",
     "log_path": "/var/log/__APP__/logs",
