@@ -11,7 +11,7 @@
         "dialect": "postgres",
         "storage": "",
         "host": "localhost",
-        "database": "__APP__",
+        "database": "__DB_NAME__",
         "username": "__DB_USER__",
         "password": "__DB_PWD__",
         "logging": false,
