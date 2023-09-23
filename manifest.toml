@@ -70,6 +70,8 @@ ram.runtime = "50M"
         # autoupdate.strategy = "latest_github_tag"
         [resources.system_user]
         # This will provision/deprovision a unix system user
+
+        allow_email = true
         
         [resources.install_dir]
         # This will create/remove the install dir as /var/www/$app
@@ -100,7 +102,4 @@ ram.runtime = "50M"
         [resources.database]
         # This will automatically provision/deprovison a MySQL DB and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
         type = "postgresql"
-
-        [resources.system_user]
-        allow_email = true
     
