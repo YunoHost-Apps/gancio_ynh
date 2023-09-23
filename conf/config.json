@@ -1,1 +1,25 @@
-%7B%0D%0A%20%20%20%20%22baseurl%22%3A%20%22__DOMAIN__%22%2C%0D%0A%20%20%20%20%22hostname%22%3A%20%22__HOSTNAME__%22%2C%0D%0A%20%20%20%20%22server%22%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%22host%22%3A%20%22localhost%22%2C%0D%0A%20%20%20%20%20%20%20%20%22port%22%3A%20__PORT__%0D%0A%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%22log_level%22%3A%20%22debug%22%2C%0D%0A%20%20%20%20%22log_path%22%3A%20%22%2Fvar%2Flog%2F__APP__%2Flogs%22%2C%0D%0A%20%20%20%20%22db%22%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%22dialect%22%3A%20%22postgres%22%2C%0D%0A%20%20%20%20%20%20%20%20%22storage%22%3A%20%22%22%2C%0D%0A%20%20%20%20%20%20%20%20%22host%22%3A%20%22localhost%22%2C%0D%0A%20%20%20%20%20%20%20%20%22database%22%3A%20%22__APP__%22%2C%0D%0A%20%20%20%20%20%20%20%20%22username%22%3A%20%22__DB_USER__%22%2C%0D%0A%20%20%20%20%20%20%20%20%22password%22%3A%20%22__DB_PWD__%22%2C%0D%0A%20%20%20%20%20%20%20%20%22logging%22%3A%20false%2C%0D%0A%20%20%20%20%20%20%20%20%22dialectOptions%22%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%22autoJsonMap%22%3A%20true%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%22user_locale%22%3A%20%22__DATA_DIR__%2Fuser_locale%22%2C%0D%0A%20%20%20%20%22upload_path%22%3A%20%22__DATA_DIR__%2Fuploads%22%2C%0D%0A%20%20%20%20%22plugins_path%22%3A%20%22__DATA_DIR__%2Fplugins%22%2C%0D%0A%7D
+{
+    "baseurl": "__DOMAIN__",
+    "hostname": "__HOSTNAME__",
+    "server": {
+        "host": "localhost",
+        "port": __PORT__
+        },
+    "log_level": "debug",
+    "log_path": "/var/log/__APP__/logs",
+    "db": {
+        "dialect": "postgres",
+        "storage": "",
+        "host": "localhost",
+        "database": "__APP__",
+        "username": "__DB_USER__",
+        "password": "__DB_PWD__",
+        "logging": false,
+        "dialectOptions": {
+            "autoJsonMap": true
+        }
+    },
+    "user_locale": "__DATA_DIR__/user_locale",
+    "upload_path": "__DATA_DIR__/uploads",
+    "plugins_path": "__DATA_DIR__/plugins",
+}
