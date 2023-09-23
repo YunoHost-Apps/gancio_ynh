@@ -69,8 +69,8 @@ ram.runtime = "50M"
         # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
         #    ynh_setup_source --dest_dir="$install_dir"
         # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-        url = ""
-        sha256 = ""
+        url = "https://framagit.org/les/gancio/-/archive/v1.6.10/gancio-v1.6.10.tar.gz"
+        sha256 = "da148304572a78977397534907ca024b5bede696ae434273f769e76fdc6b7241"
 
         # These infos are used by https://github.com/YunoHost/apps/blob/master/tools/autoupdate_app_sources/autoupdate_app_sources.py
         # to auto-update the previous asset urls and sha256sum + manifest version
