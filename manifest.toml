@@ -3,8 +3,8 @@ packaging_format = 2
 id = "gancio"
 name = "Gancio"
 
-description.en = "A shared agenda for local communities, federated with the fediverse."
-description.fr = "Un agenda partagé pour les communautés locales, fédéré avec le fédiverse."
+description.en = "Shared agenda for local communities, federated with the fediverse."
+description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse."
 
 version = "1.6.10~ynh1"
 
@@ -12,7 +12,7 @@ maintainers = ["Lapineige"]
 
 [upstream]
 # NB: Only the "license" key is mandatory. Remove entries for which there's no relevant data
-license = "AGPL v3"
+license = "AGPL-3.0-only"
 website = "https://gancio.org"
 demo = "https://demo.gancio.org/"
 admindoc = "https://gancio.org/install/"
