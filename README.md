@@ -30,7 +30,6 @@ This app provide an online agenda open to contributions, and federated with the 
 * Official user documentation: <https://gancio.org/usage>
 * Official admin documentation: <https://gancio.org/install/>
 * Upstream app code repository: <https://framagit.org/les/gancio>
-* YunoHost documentation for this app: <https://yunohost.org/app_gancio>
 * Report a bug: <https://github.com/YunoHost-Apps/gancio_ynh/issues>
 
 ## Developer info
