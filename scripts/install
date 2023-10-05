@@ -105,6 +105,14 @@ pushd $install_dir
 	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install dependencies
 popd
 
+#=================================================
+# CREATE ADMIN USER
+#=================================================
+ynh_script_progression --message="Creating admin user..." --weight=15
+
+pushd $install_dir
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create __ADMIN__ --admin
+popd
 
 #=================================================
 # GENERIC FINALIZATION
