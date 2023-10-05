@@ -21,7 +21,7 @@ This app provide an online agenda open to contributions, and federated with the 
 *Note that this package is still work in progress, don't consider it as stable.*
 
 
-**Version incluse :** 1.6.10~ynh1
+**Version incluse :** 1.6.17~ynh1
 
 **Démo :** https://demo.gancio.org/
 ## Documentations et ressources
