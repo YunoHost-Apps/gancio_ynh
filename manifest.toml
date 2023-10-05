@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse."
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse."
 
-version = "1.6.10~ynh1"
+version = "1.6.17~ynh1"
 
 maintainers = ["Lapineige"]
 
@@ -69,8 +69,8 @@ ram.runtime = "50M"
         # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
         #    ynh_setup_source --dest_dir="$install_dir"
         # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-        url = "https://gancio.org/releases/gancio-v1.6.14.tgz"
-        sha256 = "d4b655c9084d4b8b978dd2842e01c1cebe74fac996d3552e8fc1a0764729dd11"
+        url = "https://gancio.org/releases/gancio-v1.6.17.tgz"
+        sha256 = "fd9b0869d4c733c4b7de9f3bec0889918170822f1b12104ec32923c30648746f"
 
         # These infos are used by https://github.com/YunoHost/apps/blob/master/tools/autoupdate_app_sources/autoupdate_app_sources.py
         # to auto-update the previous asset urls and sha256sum + manifest version
