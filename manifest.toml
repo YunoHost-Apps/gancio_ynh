@@ -49,6 +49,16 @@ ram.runtime = "50M"
     type = "select"
     choices = ['en', 'fr', 'en', 'it', 'zh', 'pt', 'nl', 'ru']
     default = "en"
+    
+    [install.admin]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    type = "user"
+    [install.password]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    # Note that user-provided passwords questions are not automatically saved as setting
+    help.en = "Choose admin user password"
+    help.fr = "Choisissez le mot de passe du compte d'administration."
+    type = "password"
 
 [resources]
     # See the packaging documentation for the full set
