@@ -1,5 +1,5 @@
 [Unit]
-Description=Gancio : federated agenda
+Description=Gancio: federated agenda
 After=network.target
 
 [Service]
