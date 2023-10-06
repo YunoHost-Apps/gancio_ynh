@@ -16,10 +16,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-This app provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
-
-*Note that this package is still work in progress, don't consider it as stable.*
-
+Gancio propose un agenda en ligne ouvert aux contributions, et fédéré avec le fediverse via ActivityPub.
 
 **Version incluse :** 1.6.17~ynh1
 
