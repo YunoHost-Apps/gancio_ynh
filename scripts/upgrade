@@ -93,7 +93,9 @@ ynh_add_nginx_config
 ynh_add_systemd_config
 
 yunohost service add $app --description="A federated shared agenda for local communities." --log="/var/log/$app/$app.log"
+
 ynh_use_logrotate --non-append
+
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
