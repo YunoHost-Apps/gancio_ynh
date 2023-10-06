@@ -39,10 +39,13 @@ ynh_add_nginx_config
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
-
 # Use logrotate to manage application logfile(s)
 ynh_use_logrotate
+
+mkdir -p /var/log/$app
+chown $app -R /var/log/$app
+
+yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -55,7 +58,6 @@ ynh_add_config --template="config.json" --destination="$install_dir/config.json"
 
 chmod 400 "$install_dir/config.json"
 chown $app:$app "$install_dir/config.json"
-chown $app:$app "/var/log/$app"
 
 #=================================================
 # INSTALL YARN AND APP
