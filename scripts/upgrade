@@ -83,6 +83,14 @@ fi
 chown -R $app:www-data "$install_dir"
 
 #=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=10
+
+# Install Nodejs
+ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
@@ -115,12 +123,16 @@ ynh_add_config --template="config.json" --destination="$install_dir/config.json"
 chmod 400 "$install_dir/some_config_file"
 chown $app:$app "$install_dir/some_config_file"
 
-### For more complex cases where you want to replace stuff using regexes,
-### you shoud rely on ynh_replace_string (which is basically a wrapper for sed)
-### When doing so, you also need to manually call ynh_store_file_checksum
-###
-### ynh_replace_string --match_string="match_string" --replace_string="replace_string" --target_file="$install_dir/some_config_file"
-### ynh_store_file_checksum --file="$install_dir/some_config_file"
+#=================================================
+# CONFIGURE THE APP
+#=================================================
+ynh_script_progression --message="Updating app dependencies..." --weight=15
+
+pushd $install_dir
+	ynh_use_nodejs
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install dependencies
+popd
+
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
