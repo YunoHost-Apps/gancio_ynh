@@ -62,7 +62,7 @@ chown $app:$app "$install_dir/config.json"
 #=================================================
 # INSTALL YARN AND APP
 #=================================================
-ynh_script_progression --message="Installing app dependencies..." --weight=15
+ynh_script_progression --message="Installing app dependencies and creating admin user..." --weight=15
 
 pushd $install_dir
 	ynh_use_nodejs
