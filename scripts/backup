@@ -1,8 +1,5 @@
 #!/bin/bash
-#### App file generated with YoloGen, the Yunohost app generator, version 0.6.
-# This is the tutorial version of the app.
-# It contains extra commands to explain what should be done in case you want to adjust some part of the script.
-# Once you are done, you may remove them.
+
 #=================================================
 # GENERIC START
 #=================================================
@@ -18,10 +15,6 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_print_info --message="Declaring files to be backed up..."
 
-### N.B. : the following 'ynh_backup' calls are only a *declaration* of what needs
-### to be backuped and not an actual copy of any file. The actual backup that
-### creates and fill the archive with the files happens in the core after this
-### script is called. Hence ynh_backups calls takes basically 0 seconds to run.
 #=================================================
 # BACKUP THE APP MAIN DIR
 #=================================================
@@ -32,9 +25,8 @@ ynh_backup --src_path="$install_dir"
 # BACKUP THE DATA DIR
 #=================================================
 
-    # The --is_big parameters ensure this folder is not included in the backup by default (taking less space), except if BACKUP_CORE_ONLY=0 is passed before the backup command. You might want to document that for your users.
-    # Only relevant if there is a "data_dir" resource for this app
 ynh_backup --src_path="$data_dir" --is_big
+
 #=================================================
 # BACKUP THE NGINX CONFIGURATION
 #=================================================
@@ -48,6 +40,7 @@ ynh_backup --src_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 #=================================================
 
 ynh_backup --src_path="/etc/logrotate.d/$app"
+
 #=================================================
 # BACKUP SYSTEMD
 #=================================================
@@ -59,10 +52,8 @@ ynh_backup --src_path="/etc/systemd/system/$app.service"
 #=================================================
 ynh_print_info --message="Backing up the postgresql database..."
 
-### (However, things like MySQL dumps *do* take some time to run, though the
-### copy of the generated dump to the archive still happens later)
-
 ynh_psql_dump_db --database="$db_name" > db.sql
+
 #=================================================
 # END OF SCRIPT
 #=================================================
