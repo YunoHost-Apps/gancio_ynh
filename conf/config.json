@@ -1,0 +1,24 @@
+{
+    "baseurl": "https://__DOMAIN__",
+    "server": {
+        "host": "localhost",
+        "port": "__PORT__"
+        },
+    "log_level": "debug",
+    "log_path": "/var/log/__APP__/logs",
+    "db": {
+        "dialect": "postgres",
+        "storage": "",
+        "host": "localhost",
+        "database": "__DB_NAME__",
+        "username": "__DB_USER__",
+        "password": "__DB_PWD__",
+        "logging": false,
+        "dialectOptions": {
+            "autoJsonMap": true
+        }
+    },
+    "user_locale": "__DATA_DIR__/user_locale",
+    "upload_path": "__DATA_DIR__/uploads",
+    "plugins_path": "__DATA_DIR__/plugins"
+}

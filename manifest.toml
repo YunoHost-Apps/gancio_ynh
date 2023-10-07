@@ -1,0 +1,84 @@
+packaging_format = 2
+
+id = "gancio"
+name = "Gancio"
+
+description.en = "Shared agenda for local communities, federated with the fediverse"
+description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
+
+version = "1.6.17~ynh1"
+
+maintainers = ["Lapineige"]
+
+[upstream]
+license = "AGPL-3.0-only"
+website = "https://gancio.org"
+demo = "https://demo.gancio.org/"
+admindoc = "https://gancio.org/install/"
+userdoc = "https://gancio.org/usage"
+code = "https://framagit.org/les/gancio"
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all"
+multi_instance = false
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "select"
+    choices = ['en', 'fr', 'en', 'it', 'zh', 'pt', 'nl', 'ru']
+    default = "en"
+    
+    [install.admin]
+    type = "user"
+
+    [install.password]
+    help.en = "Choose admin user password"
+    help.fr = "Choisissez le mot de passe du compte d'administration."
+    type = "password"
+
+[resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://gancio.org/releases/gancio-v1.6.17.tgz"
+        sha256 = "fd9b0869d4c733c4b7de9f3bec0889918170822f1b12104ec32923c30648746f"
+
+        [resources.system_user]
+        allow_email = true
+        
+        [resources.install_dir]
+
+        [resources.data_dir]
+        subdirs = ['uploads', 'user_locale', 'plugins']
+        
+        [resources.permissions]
+        main.url = "/"
+    
+        [resources.ports]
+
+        [resources.apt]
+        packages = "postgresql"
+        extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
+        extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
+        extras.yarn.packages = "yarn"
+        
+        [resources.database]
+        type = "postgresql"
+    
