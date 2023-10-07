@@ -21,6 +21,11 @@ Gancio propose un agenda en ligne ouvert aux contributions, et fédéré avec le
 **Version incluse :** 1.6.17~ynh1
 
 **Démo :** https://demo.gancio.org/
+
+## Captures d’écran
+
+![Capture d’écran de Gancio](./doc/screenshots/screenshot.png)
+
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://gancio.org>
