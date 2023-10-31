@@ -27,6 +27,7 @@ Gancio propose un agenda en ligne ouvert aux contributions, et fédéré avec le
 * Documentation officielle utilisateur : <https://gancio.org/usage>
 * Documentation officielle de l’admin : <https://gancio.org/install/>
 * Dépôt de code officiel de l’app : <https://framagit.org/les/gancio>
+* YunoHost Store: <https://apps.yunohost.org/app/gancio>
 * Signaler un bug : <https://github.com/YunoHost-Apps/gancio_ynh/issues>
 
 ## Informations pour les développeurs
