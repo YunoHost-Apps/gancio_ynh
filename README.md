@@ -22,6 +22,11 @@ Gancio provide an online agenda open to contributions, and federated with the fe
 **Shipped version:** 1.6.17~ynh1
 
 **Demo:** https://demo.gancio.org/
+
+## Screenshots
+
+![Screenshot of Gancio](./doc/screenshots/screenshot.png)
+
 ## Documentation and resources
 
 * Official app website: <https://gancio.org>

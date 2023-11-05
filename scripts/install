@@ -67,7 +67,7 @@ ynh_script_progression --message="Installing app dependencies and creating admin
 pushd $install_dir
 	ynh_use_nodejs
 	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install dependencies
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create __ADMIN__ --admin --config ./config.json
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create __ADMIN__ __PASSWORD__ --admin --config ./config.json
 popd
 
 #=================================================
