@@ -57,8 +57,9 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.6.17.tgz"
-        sha256 = "fd9b0869d4c733c4b7de9f3bec0889918170822f1b12104ec32923c30648746f"
+        url = "https://framagit.org/les/gancio/-/archive/v1.14.1/gancio-v1.14.1.tar.gz"
+        sha256 = "e4afef73cfac06408fc4d958a54e18b78903c424c0a9632868d04096b2441c3e"
+        autoupdate.strategy = "latest_gitlab_release"
 
         [resources.system_user]
         allow_email = true
