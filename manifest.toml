@@ -43,7 +43,7 @@ ram.runtime = "50M"
     type = "select"
     choices = ['en', 'fr', 'en', 'it', 'zh', 'pt', 'nl', 'ru']
     default = "en"
-    
+
     [install.admin]
     type = "user"
 
@@ -57,20 +57,21 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.6.17.tgz"
+        url = "https://framagit.org/les/gancio/-/archive/v1.6.17/gancio-v1.6.17.tar.gz"
         sha256 = "fd9b0869d4c733c4b7de9f3bec0889918170822f1b12104ec32923c30648746f"
+        autoupdate.strategy = "latest_gitlab_release"
 
         [resources.system_user]
         allow_email = true
-        
+
         [resources.install_dir]
 
         [resources.data_dir]
         subdirs = ['uploads', 'user_locale', 'plugins']
-        
+
         [resources.permissions]
         main.url = "/"
-    
+
         [resources.ports]
 
         [resources.apt]
@@ -78,7 +79,7 @@ ram.runtime = "50M"
         extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
         extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
         extras.yarn.packages = "yarn"
-        
+
         [resources.database]
         type = "postgresql"
-    
+
