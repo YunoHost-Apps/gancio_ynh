@@ -59,7 +59,9 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://framagit.org/les/gancio/-/releases/v1.15.5/downloads/gancio.tgz"
         sha256 = "34090ca1a132f983529fb7582dae9d9f707256c005721933c90ad1386fe238f0"
-        #autoupdate.strategy = "latest_gitlab_release"
+
+        autoupdate.strategy = "latest_gitlab_release"
+        autoupdate.asset = "^gancio.tgz$"
 
         [resources.system_user]
         allow_email = true
