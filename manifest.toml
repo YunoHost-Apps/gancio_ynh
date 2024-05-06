@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.6.17~ynh1"
+version = "1.15.5~ynh1"
 
 maintainers = ["Lapineige"]
 
@@ -57,8 +57,11 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.6.17.tgz"
-        sha256 = "fd9b0869d4c733c4b7de9f3bec0889918170822f1b12104ec32923c30648746f"
+        url = "https://framagit.org/les/gancio/-/releases/v1.15.5/downloads/gancio.tgz"
+        sha256 = "34090ca1a132f983529fb7582dae9d9f707256c005721933c90ad1386fe238f0"
+
+        autoupdate.strategy = "latest_gitlab_release"
+        autoupdate.asset = "^gancio.tgz$"
 
         [resources.system_user]
         allow_email = true
