@@ -18,7 +18,7 @@ Il NE doit PAS être modifié à la main.
 
 Gancio propose un agenda en ligne ouvert aux contributions, et fédéré avec le fediverse via ActivityPub.
 
-**Version incluse :** v1.15.2~ynh1
+**Version incluse :** 1.15.5~ynh1
 
 **Démo :** <https://demo.gancio.org/>
 
