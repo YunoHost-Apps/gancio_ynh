@@ -18,7 +18,6 @@ It shall NOT be edited by hand.
 
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
-
 **Shipped version:** 1.15.5~ynh1
 
 **Demo:** <https://demo.gancio.org/>
@@ -26,7 +25,6 @@ Gancio provide an online agenda open to contributions, and federated with the fe
 ## Screenshots
 
 ![Screenshot of Gancio](./doc/screenshots/screenshot.png)
-
 ## Documentation and resources
 
 - Official app website: <https://gancio.org>
