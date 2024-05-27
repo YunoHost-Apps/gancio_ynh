@@ -31,6 +31,8 @@ ynh_remove_logrotate
 
 ynh_secure_remove --file="/var/log/$app"
 
+ynh_remove_nodejs
+
 #=================================================
 # END OF SCRIPT
 #=================================================
