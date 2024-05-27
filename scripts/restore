@@ -65,7 +65,6 @@ chown $app:$app "/var/log/$app"
 
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
-
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
