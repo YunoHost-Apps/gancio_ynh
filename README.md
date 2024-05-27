@@ -19,7 +19,7 @@ It shall NOT be edited by hand.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Shipped version:** 1.16.0~ynh1
+**Shipped version:** 1.16.2~ynh1
 
 **Demo:** <https://demo.gancio.org/>
 
