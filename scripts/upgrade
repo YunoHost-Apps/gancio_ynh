@@ -22,7 +22,7 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 ynh_script_progression --message="Upgrading source files..." --weight=1
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir" --keep="config.json"
+ynh_setup_source --dest_dir="$install_dir" --full_replace=1
 
 chown -R $app:www-data "$install_dir"
 
@@ -53,12 +53,12 @@ yunohost service add $app --description="Federated shared agenda for local commu
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-#ynh_script_progression --message="Updating a configuration file..." --weight=1
+ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-#ynh_add_config --template="config.json" --destination="$install_dir/config.json"
+ynh_add_config --template="config.json" --destination="$data_dir/config.json"
 
-#chmod 400 "$install_dir/config.json"
-#chown $app:$app "$install_dir/config.json"
+chmod 400 "$data_dir/config.json"
+chown $app:$app "$data_dir/config.json"
 
 #=================================================
 # CONFIGURE THE APP
@@ -67,7 +67,8 @@ ynh_script_progression --message="Updating app dependencies..." --weight=15
 
 pushd $install_dir
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install/upgrade dependencies
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create $mail $password admin --config $data_dir/config.json
 popd
 
 #=================================================
