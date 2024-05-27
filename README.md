@@ -39,7 +39,6 @@ Gancio provide an online agenda open to contributions, and federated with the fe
 ## Gancio with Yunohost
 
 - You can install only _one instance_ of Gancio on your Yunohost.
-- A bug actually prevent the creation of _Admin User_ account at insall: you must register an user just after instal, the first one will be an administrator (source: https://github.com/YunoHost-Apps/gancio_ynh/issues/13#issuecomment-2132856566).
 - There is _no integration_ with Yunohost’s SSO: Gancio users accounts are independant from global YNH accounts.
  
 ## Developer info
