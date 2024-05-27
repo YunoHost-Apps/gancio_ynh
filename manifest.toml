@@ -60,8 +60,8 @@ ram.runtime = "50M"
         url = "https://gancio.org/releases/gancio-v1.16.0.tgz"
         sha256 = "c12e752f076d40ed7870b517300d561486ae5b30e41d7426fc07237b0d36755c"
 
-        autoupdate.strategy = "latest_gitlab_release"
-        autoupdate.asset = "^gancio-v*.tgz$"
+        #autoupdate.strategy = "latest_gitlab_release"
+        #autoupdate.asset = "^gancio-v*.tgz$"
 
         [resources.system_user]
         allow_email = true
