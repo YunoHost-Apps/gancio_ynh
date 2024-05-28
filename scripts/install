@@ -62,14 +62,12 @@ chown $app:$app "$install_dir/config.json"
 #=================================================
 # INSTALL YARN AND APP
 #=================================================
-ynh_script_progression --message="Installing app dependencies and creating admin user..." --weight=15
+ynh_script_progression --message="Installing app dependencies..." --weight=15
 
 pushd $install_dir
 	ynh_use_nodejs
 	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install dependencies
 	#ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn build
-	admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create $admin_mail $password admin --config ./config.json
 popd
 
 #=================================================
@@ -80,7 +78,18 @@ popd
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
+# It also initializes the database to allow creating the admin user
 ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
+
+#=================================================
+# CREATING ADMIN USER
+#=================================================
+ynh_script_progression --message="Creating admin user..." --weight=15
+
+pushd $install_dir
+	admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create $admin_mail $password admin --config ./config.json
+popd
 
 #=================================================
 # END OF SCRIPT
