@@ -9,6 +9,8 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+mail=$(ynh_user_get_info --username=$admin --key=mail)
+
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
@@ -66,8 +68,7 @@ ynh_script_progression --message="Installing app dependencies..." --weight=15
 
 pushd $install_dir
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install # Install dependencies
-	#ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn build
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install
 popd
 
 #=================================================
