@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Gancio para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/gancio.svg)](https://dash.yunohost.org/appci/app/gancio) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/gancio.svg)](https://ci-apps.yunohost.org/ci/apps/gancio/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
 
 [![Instalar Gancio con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=gancio)
 
