@@ -21,7 +21,7 @@ code = "https://framagit.org/les/gancio"
 [integration]
 yunohost = ">= 11.2"
 architectures = "all"
-multi_instance = false
+multi_instance = true
 ldap = false
 sso = false
 disk = "50M"
