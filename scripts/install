@@ -10,11 +10,8 @@ mail=$(ynh_user_get_info --username=$admin --key=mail)
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-# Install Nodejs
 ynh_nodejs_install
 
-#=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -22,23 +19,18 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
 ynh_config_add_systemd
 
-# Use logrotate to manage application logfile(s)
 ynh_config_add_logrotate
 
 mkdir -p /var/log/$app
-#REMOVEME? Assuming ynh_config_add_logrotate is called, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app -R /var/log/$app
 
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
@@ -51,16 +43,12 @@ ynh_script_progression "Adding $app's configuration..."
 
 ynh_config_add --template="config.json" --destination="$install_dir/config.json"
 
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.json"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.json"
-
 #=================================================
 # INSTALL YARN AND APP
 #=================================================
 ynh_script_progression "Installing app dependencies..."
 
 pushd $install_dir
-
 	ynh_hide_warnings ynh_exec_as_app node_load_PATH yarn install
 popd
 
@@ -69,8 +57,6 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
-# It also initializes the database to allow creating the admin user
 ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
 
 #=================================================
@@ -80,10 +66,11 @@ ynh_script_progression "Creating admin user..."
 
 pushd $install_dir
 	admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH ./server/cli.js users create $admin_mail $password admin --config ./config.json
+	ynh_hide_warnings ynh_exec_as_app ./server/cli.js users create $admin_mail $password admin --config ./config.json
 popd
 
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression "Installation of $app completed"

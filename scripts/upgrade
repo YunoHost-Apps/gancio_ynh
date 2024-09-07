@@ -15,16 +15,13 @@ ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir" --keep="config.json"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
 ynh_script_progression "Upgrading dependencies..."
 
-# Install Nodejs
 ynh_nodejs_install
 
 #=================================================
@@ -32,7 +29,6 @@ ynh_nodejs_install
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
-# This should be a literal copypasta of what happened in the install's "System configuration" section
 ynh_config_add_nginx
 
 ynh_config_add_systemd
@@ -42,16 +38,11 @@ ynh_config_add_logrotate
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
 #=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
-#=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 #ynh_script_progression "Updating configuration..."
 
 #ynh_config_add --template="config.json" --destination="$install_dir/config.json"
-
-##REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.json"
-##REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.json"
 
 #=================================================
 # CONFIGURE THE APP
@@ -59,8 +50,7 @@ yunohost service add $app --description="Federated shared agenda for local commu
 ynh_script_progression "Updating app dependencies..."
 
 pushd $install_dir
-
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH yarn install # Install/upgrade dependencies
+	ynh_hide_warnings ynh_exec_as_app yarn install # Install/upgrade dependencies
 popd
 
 #=================================================

@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.16.2~ynh2"
+version = "1.16.2~ynh3"
 
 maintainers = ["Lapineige"]
 
@@ -19,7 +19,7 @@ userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
