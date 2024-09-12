@@ -19,7 +19,7 @@ No se debe editar a mano.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Versión actual:** 1.16.2~ynh2
+**Versión actual:** 1.19.0~ynh1
 
 **Demo:** <https://demo.gancio.org/>
 
@@ -38,7 +38,7 @@ Gancio provide an online agenda open to contributions, and federated with the fe
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/gancio_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/gancio_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

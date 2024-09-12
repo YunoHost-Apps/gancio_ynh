@@ -19,7 +19,7 @@ EZ editatu eskuz.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Paketatutako bertsioa:** 1.16.2~ynh2
+**Paketatutako bertsioa:** 1.19.0~ynh1
 
 **Demoa:** <https://demo.gancio.org/>
 
