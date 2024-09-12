@@ -19,7 +19,7 @@
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Поставляемая версия:** 1.16.2~ynh2
+**Поставляемая версия:** 1.19.0~ynh1
 
 **Демо-версия:** <https://demo.gancio.org/>
 
