@@ -54,7 +54,6 @@ yunohost service add $app --description="Federated shared agenda for local commu
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-# Typically you only have either $app or php-fpm but not both at the same time...
 ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
 ynh_systemctl --service=nginx --action=reload
 

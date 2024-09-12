@@ -50,7 +50,7 @@ yunohost service add $app --description="Federated shared agenda for local commu
 ynh_script_progression "Updating app dependencies..."
 
 pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app yarn install # Install/upgrade dependencies
+	ynh_hide_warnings ynh_exec_as_app yarn install
 popd
 
 #=================================================
