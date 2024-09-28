@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -14,38 +8,29 @@ mail=$(ynh_user_get_info --username=$admin --key=mail)
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=10
+ynh_script_progression "Installing dependencies..."
 
-# Install Nodejs
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+ynh_nodejs_install
 
-#=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
-
-chown -R $app:www-data "$install_dir" 
 
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config using the conf/nginx.conf template
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-# Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate
+ynh_config_add_logrotate
 
 mkdir -p /var/log/$app
-chown $app -R /var/log/$app
 
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
@@ -54,45 +39,38 @@ yunohost service add $app --description="Federated shared agenda for local commu
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression "Adding $app's configuration..."
 
-ynh_add_config --template="config.json" --destination="$install_dir/config.json"
-
-chmod 400 "$install_dir/config.json"
-chown $app:$app "$install_dir/config.json"
+ynh_config_add --template="config.json" --destination="$install_dir/config.json"
 
 #=================================================
 # INSTALL YARN AND APP
 #=================================================
-ynh_script_progression --message="Installing app dependencies..." --weight=15
+ynh_script_progression "Installing app dependencies..."
 
 pushd $install_dir
-	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH yarn install
+	ynh_hide_warnings ynh_exec_as_app yarn install
 popd
 
 #=================================================
-# GENERIC FINALIZATION
-#=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
-# It also initializes the database to allow creating the admin user
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="START TASK MANAGER" --timeout=30
+ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
 
 #=================================================
 # CREATING ADMIN USER
 #=================================================
-ynh_script_progression --message="Creating admin user..." --weight=15
+ynh_script_progression "Creating admin user..."
 
 pushd $install_dir
 	admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH ./server/cli.js users create $admin_mail $password admin --config ./config.json
+	ynh_hide_warnings ynh_exec_as_app ./server/cli.js users create $admin_mail $password admin --config ./config.json
 popd
 
 #=================================================
 # END OF SCRIPT
 #=================================================
-ynh_script_progression --message="Installation of $app completed" --last
+
+ynh_script_progression "Installation of $app completed"
