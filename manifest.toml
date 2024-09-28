@@ -22,7 +22,7 @@ code = "https://framagit.org/les/gancio"
 yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
-multi_instance = false
+multi_instance = true
 ldap = false
 sso = false
 disk = "50M"
@@ -58,8 +58,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.19.0.tgz"
-        sha256 = "263f2a948bf1717240f71e9b64ec0b05c42917e0d408d1cb17bdb9530ae7cb3a"
+        url = "https://gancio.org/releases/gancio-v1.19.3.tgz"
+        sha256 = "478de711a09c415afc2e33430ba557d1c862651e54b3819c96e2591b88fc56b9"
 
         #autoupdate.strategy = "latest_gitlab_release"
         #autoupdate.asset = "^gancio-v*.tgz$"
