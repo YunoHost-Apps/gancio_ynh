@@ -7,8 +7,8 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-Environment="__YNH_NODE_LOAD_PATH__"
-ExecStart=__YNH_NODE__ server/cli.js start --config __INSTALL_DIR__/config.json
+Environment="PATH=__PATH_WITH_NODEJS__"
+ExecStart=__NODEJS_DIR__/node server/cli.js start --config __INSTALL_DIR__/config.json
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
