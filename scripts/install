@@ -10,7 +10,7 @@ mail=$(ynh_user_get_info --username=$admin --key=mail)
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-ynh_nodejs_install
+nodejs_install
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -57,7 +57,7 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
+ynh_systemctl  --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
 
 #=================================================
 # CREATING ADMIN USER
