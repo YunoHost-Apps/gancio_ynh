@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Gancio untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/gancio.svg)](https://ci-apps.yunohost.org/ci/apps/gancio/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
+![Status kerja](https://apps.yunohost.org/badge/state/gancio)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/gancio)
 
 [![Pasang Gancio dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=gancio)
 
@@ -19,7 +21,7 @@ Ini TIDAK boleh diedit dengan tangan.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Versi terkirim:** 1.19.4~ynh1
+**Versi terkirim:** 1.22.0~ynh1
 
 **Demo:** <https://demo.gancio.org/>
 

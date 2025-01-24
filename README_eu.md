@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Gancio YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/gancio.svg)](https://ci-apps.yunohost.org/ci/apps/gancio/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/gancio)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/gancio)
 
 [![Instalatu Gancio YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=gancio)
 
@@ -19,7 +21,7 @@ EZ editatu eskuz.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Paketatutako bertsioa:** 1.19.4~ynh1
+**Paketatutako bertsioa:** 1.22.0~ynh1
 
 **Demoa:** <https://demo.gancio.org/>
 
