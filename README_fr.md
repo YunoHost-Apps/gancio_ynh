@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # Gancio pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/gancio.svg)](https://ci-apps.yunohost.org/ci/apps/gancio/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/gancio)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/gancio)
 
 [![Installer Gancio avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=gancio)
 
@@ -18,7 +20,7 @@ Il NE doit PAS être modifié à la main.
 
 Gancio propose un agenda en ligne ouvert aux contributions, et fédéré avec le fediverse via ActivityPub.
 
-**Version incluse :** 1.19.4~ynh1
+**Version incluse :** 1.22.0~ynh1
 
 **Démo :** <https://demo.gancio.org/>
 

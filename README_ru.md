@@ -5,7 +5,9 @@
 
 # Gancio для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/gancio.svg)](https://ci-apps.yunohost.org/ci/apps/gancio/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/gancio.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/gancio.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
+![Состояние работы](https://apps.yunohost.org/badge/state/gancio)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/gancio)
 
 [![Установите Gancio с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=gancio)
 
@@ -19,7 +21,7 @@
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Поставляемая версия:** 1.19.4~ynh1
+**Поставляемая версия:** 1.22.0~ynh1
 
 **Демо-версия:** <https://demo.gancio.org/>
 
