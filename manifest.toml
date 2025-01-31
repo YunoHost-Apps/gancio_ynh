@@ -19,12 +19,14 @@ userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"

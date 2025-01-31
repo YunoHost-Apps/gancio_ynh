@@ -3,7 +3,7 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-mail=$(ynh_user_get_info --username=$admin --key=mail)
+admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -67,7 +67,6 @@ ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until=
 ynh_script_progression "Creating admin user..."
 
 pushd $install_dir
-	admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
 	ynh_hide_warnings ynh_exec_as_app ./server/cli.js users create $admin_mail $password admin --config ./config.json
 popd
 
