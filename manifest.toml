@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.22.0~ynh1"
+version = "1.24.0~ynh1"
 
 maintainers = ["Lapineige"]
 
@@ -19,12 +19,14 @@ userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -43,7 +45,7 @@ ram.runtime = "50M"
     ask.fr = "Choisissez la langue de l'application"
     type = "select"
     choices = ['en', 'fr', 'en', 'it', 'zh', 'pt', 'nl', 'ru']
-    default = "en"
+    default = "fr"
     
     [install.admin]
     type = "user"
@@ -58,8 +60,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.22.0.tgz"
-        sha256 = "f4b7157d063e2e68e1bba22b9231a6e9149d61fbf0eed7f5f9794d3f76ec6afb"
+        url = "https://gancio.org/releases/gancio-v1.24.0.tgz"
+        sha256 = "d46146c4e45b874613a704b565941e9b57037bc61f504bd7b50c70a6e12a5d7e"
 
         #autoupdate.strategy = "latest_gitlab_release"
         #autoupdate.asset = "^gancio-v*.tgz$"
@@ -78,7 +80,7 @@ ram.runtime = "50M"
         [resources.ports]
 
         [resources.apt]
-        packages = "postgresql"
+        packages = "postgresql build-essential"
         extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
         extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
         extras.yarn.packages = "yarn"
