@@ -60,8 +60,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.24.2.tgz"
-        sha256 = "621275744ea44e8a25c04d51357e3e67ff8488863b99d6e94a0b21f3b3650f28"
+        url = "https://gancio.org/releases/gancio-v1.24.4.tgz"
+        sha256 = "68bb7e62f33f6bd51192879b031298ec4dd37103aa3efa7500d5369778d44c1b"
 
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "^gancio-v*.tgz$"
