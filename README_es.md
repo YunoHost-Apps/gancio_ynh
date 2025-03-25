@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Gancio para Yunohost
+# Gancio para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/gancio)
@@ -21,7 +21,7 @@ No se debe editar a mano.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Versión actual:** 1.24.2~ynh1
+**Versión actual:** 1.25.0~ynh1
 
 **Demo:** <https://demo.gancio.org/>
 
