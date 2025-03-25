@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Gancio para Yunohost
+# Gancio para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/gancio)](https://ci-apps.yunohost.org/ci/apps/gancio/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/gancio)
