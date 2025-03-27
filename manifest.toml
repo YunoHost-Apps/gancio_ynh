@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.25.1~ynh1"
+version = "1.25.1~ynh2"
 
 maintainers = ["Lapineige"]
 
