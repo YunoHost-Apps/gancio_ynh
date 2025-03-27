@@ -21,7 +21,7 @@ Ini TIDAK boleh diedit dengan tangan.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Versi terkirim:** 1.25.1~ynh1
+**Versi terkirim:** 1.25.1~ynh2
 
 **Demo:** <https://demo.gancio.org/>
 
