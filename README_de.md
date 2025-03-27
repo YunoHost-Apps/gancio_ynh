@@ -21,7 +21,7 @@ Sie darf NICHT von Hand bearbeitet werden.
 Gancio provide an online agenda open to contributions, and federated with the fediverse using ActivityPub.
 
 
-**Ausgelieferte Version:** 1.25.1~ynh1
+**Ausgelieferte Version:** 1.25.1~ynh2
 
 **Demo:** <https://demo.gancio.org/>
 
