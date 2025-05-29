@@ -80,7 +80,7 @@ ram.runtime = "50M"
         [resources.ports]
 
         [resources.apt]
-        packages = "postgresql build-essential"
+        packages = "postgresql, build-essential"
         extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
         extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
         extras.yarn.packages = "yarn"
