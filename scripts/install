@@ -69,7 +69,7 @@ ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until=
 ynh_script_progression "Creating admin user..."
 
 pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app ./server/cli.js users create $admin_mail $password admin --config ./config.json
+	ynh_hide_warnings ynh_exec_as_app ./server/cli.js users create $admin_mail "$password" admin --config ./config.json
 popd
 
 #=================================================
