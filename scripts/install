@@ -36,7 +36,7 @@ ynh_config_add_logrotate
 
 mkdir -p /var/log/$app
 touch /var/log/$app/$app.log
-chown $app -R /var/log/$app
+chown -R $app: /var/log/$app
 
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 

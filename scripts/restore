@@ -50,6 +50,7 @@ yunohost service add $app --description="Federated shared agenda for local commu
 #=================================================
 
 ynh_restore "/var/log/$app/"
+chown -R $app: /var/log/$app
 
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
