@@ -50,11 +50,18 @@ ynh_restore "/etc/logrotate.d/$app"
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
 #=================================================
+# RESTORE VARIOUS FILES
+#=================================================
+
+ynh_restore "/var/log/$app/"
+
+#=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
+ynh_systemctl --service=$app --action="start" --log_path="/var/log/$app/$app.log"
+
 ynh_systemctl --service=nginx --action=reload
 
 #=================================================
