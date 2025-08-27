@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.27.0~ynh1"
+version = "1.27.0~ynh2"
 
 maintainers = ["Lapineige"]
 
@@ -61,7 +61,7 @@ ram.runtime = "50M"
 
         [resources.sources.main]
         url = "https://gancio.org/releases/gancio-v1.27.0.tgz"
-        sha256 = "fe7bd882f923ce6d8f9edcec0c2d896afe772eb251940206c7177326b898fc9b"
+        sha256 = "d52717050e2ff6bca1f8a87da7a10d24a0aa19b8ee527a0ff2c129c1d589a165"
 
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "https://gancio\\.org/releases/gancio-v\\d+(\\.\\d+){2}\\.tgz$"
