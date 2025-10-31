@@ -45,6 +45,9 @@ ynh_config_add --template="config.json" --destination="$install_dir/config.json"
 ynh_script_progression "Installing app dependencies..."
 
 pushd $install_dir
+    corepack enable
+    ynh_hide_warnings npm install -g corepack@latest
+    ynh_hide_warnings corepack prepare  yarn@latest --activate
 	ynh_hide_warnings ynh_exec_as_app yarn install
 popd
 
