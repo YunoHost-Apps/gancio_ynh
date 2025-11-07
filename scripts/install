@@ -26,10 +26,6 @@ ynh_config_add_systemd
 
 ynh_config_add_logrotate
 
-mkdir -p /var/log/$app
-touch /var/log/$app/$app.log
-chown $app -R /var/log/$app
-
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
 
 #=================================================
@@ -47,7 +43,7 @@ ynh_script_progression "Installing app dependencies..."
 pushd $install_dir
     corepack enable
     ynh_hide_warnings npm install -g corepack@latest
-    ynh_hide_warnings corepack prepare  yarn@latest --activate
+    ynh_hide_warnings corepack prepare yarn@latest --activate
 	ynh_hide_warnings ynh_exec_as_app yarn install
 popd
 
@@ -56,7 +52,7 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="START TASK MANAGER" --timeout=30
+ynh_systemctl --service=$app --action="start"
 
 #=================================================
 # CREATING ADMIN USER
