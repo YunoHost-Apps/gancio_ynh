@@ -46,14 +46,6 @@ touch /var/log/$app/$app.log
 chown $app -R /var/log/$app
 
 #=================================================
-# RESTORE VARIOUS FILES
-#=================================================
-
-mkdir -p /var/log/$app
-touch /var/log/$app/$app.log
-chown $app -R /var/log/$app
-
-#=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
