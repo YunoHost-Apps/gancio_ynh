@@ -9,6 +9,10 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="PATH=__PATH_WITH_NODEJS__"
 ExecStart=__NODEJS_DIR__/node server/cli.js start --config __INSTALL_DIR__/config.json
+StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardError=inherit
+NonBlocking=true
+Restart=always
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
