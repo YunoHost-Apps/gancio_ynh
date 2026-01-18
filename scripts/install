@@ -54,7 +54,7 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --wait_until="START TASK MANAGER" --timeout=30
+ynh_systemctl --service=$app --action="start"
 
 #=================================================
 # CREATING ADMIN USER
