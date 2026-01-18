@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.28.2~ynh1"
+version = "1.28.2~ynh2"
 
 maintainers = ["Lapineige"]
 
@@ -14,12 +14,12 @@ maintainers = ["Lapineige"]
 license = "AGPL-3.0-only"
 website = "https://gancio.org"
 demo = "https://demo.gancio.org/"
-admindoc = "https://gancio.org/install/"
+admindoc = "https://gancio.org/install"
 userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -84,6 +84,6 @@ ram.runtime = "50M"
         
         [resources.database]
         type = "postgresql"
-    
+        
         [resources.nodejs]
         version = "22"
