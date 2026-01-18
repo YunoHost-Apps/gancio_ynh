@@ -14,7 +14,7 @@ maintainers = ["Lapineige"]
 license = "AGPL-3.0-only"
 website = "https://gancio.org"
 demo = "https://demo.gancio.org/"
-admindoc = "https://gancio.org/install/"
+admindoc = "https://gancio.org/install"
 userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
