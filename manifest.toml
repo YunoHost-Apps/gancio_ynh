@@ -6,7 +6,7 @@ name = "Gancio"
 description.en = "Shared agenda for local communities, federated with the fediverse"
 description.fr = "Agenda partagé pour les communautés locales, fédéré avec le fédiverse"
 
-version = "1.28.1~ynh1"
+version = "1.28.2~ynh1"
 
 maintainers = ["Lapineige"]
 
@@ -14,12 +14,12 @@ maintainers = ["Lapineige"]
 license = "AGPL-3.0-only"
 website = "https://gancio.org"
 demo = "https://demo.gancio.org/"
-admindoc = "https://gancio.org/install/"
+admindoc = "https://gancio.org/install"
 userdoc = "https://gancio.org/usage"
 code = "https://framagit.org/les/gancio"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -60,8 +60,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://gancio.org/releases/gancio-v1.28.1.tgz"
-        sha256 = "544809568058e5b784972fbb9dd7eef2dbe3ddc248306001db1446a422f80b14"
+        url = "https://gancio.org/releases/gancio-v1.28.2.tgz"
+        sha256 = "9f5c75def970239390e7ee2d226fe7fafee2d55201b2c2f471798172118e95eb"
 
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "https://gancio\\.org/releases/gancio-v\\d+(\\.\\d+){2}\\.tgz$"

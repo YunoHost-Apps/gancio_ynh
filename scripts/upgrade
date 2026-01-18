@@ -25,9 +25,9 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-ynh_config_add_logrotate
-
 yunohost service add $app --description="Federated shared agenda for local communities" --log="/var/log/$app/$app.log"
+
+ynh_config_add_logrotate
 
 #=================================================
 # UPDATE A CONFIG FILE
@@ -42,9 +42,7 @@ yunohost service add $app --description="Federated shared agenda for local commu
 ynh_script_progression "Updating app dependencies..."
 
 pushd $install_dir
-    corepack enable
-    ynh_hide_warnings npm install -g corepack@latest
-    ynh_hide_warnings corepack prepare yarn@latest --activate
+    ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
 	ynh_hide_warnings ynh_exec_as_app yarn install
 popd
 
